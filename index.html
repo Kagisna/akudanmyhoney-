@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Me Valentine</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:white;
+  font-family:Arial;
+}
+
+.box {
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  animation: pop 0.6s;
+}
+
+@keyframes pop {
+  from {transform:scale(0.7);opacity:0;}
+  to {transform:scale(1);opacity:1;}
+}
+
+button {
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+#yes {
+  background:pink;
+  transition:0.3s;
+}
+
+#yes:hover {
+  transform:scale(1.15);
+}
+
+#no {
+  background:pink;
+  position:absolute;
+  transition:0.25s ease;
+}
+
+#loading{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:white;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+#loading img{
+  width:150px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box" id="main">
+
+<img src="dudu-bubu2.gif" width="150"><br><br>
+
+<h2>Do you love me? 💖</h2>
+
+<button id="yes" onclick="yes()">YES</button>
+<button id="no" onmouseenter="move()">NO</button>
+
+</div>
+
+<div id="loading">
+
+<img src="kucing.gif">
+
+<p>Loading...</p>
+
+</div>
+
+<script>
+
+function move(){
+ let no=document.getElementById("no");
+ let x=Math.random()*(window.innerWidth-120);
+ let y=Math.random()*(window.innerHeight-80);
+ no.style.left=x+"px";
+ no.style.top=y+"px";
+}
+
+function yes(){
+
+document.getElementById("main").style.display="none";
+document.getElementById("loading").style.display="flex";
+
+setTimeout(()=>{
+ window.location.href="aku dan dia 4,1.html";
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>
